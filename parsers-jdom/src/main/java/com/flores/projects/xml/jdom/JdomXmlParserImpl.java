@@ -28,7 +28,7 @@ public class JdomXmlParserImpl implements XmlParserImpl {
 		try {
 			SAXBuilder builder = new SAXBuilder();
 			Document document = builder.build(file);
-			
+
 			Element root = document.getRootElement();
 			Element header = root.getChild("Header", namespace_soap);
 			Element security = header.getChild("Security", namespace_wsse);
