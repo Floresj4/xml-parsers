@@ -1,38 +1,44 @@
 package com.flores.projects.xml.jdom;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static java.lang.String.format;
+import static org.junit.Assert.assertNotNull;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import java.io.File;
+import java.io.FileNotFoundException;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+public class JdomXmlParserImplTest  {
+	
+	private static File samlFile = null;
+	private JdomXmlParserImpl jdomParser = new JdomXmlParserImpl();
+	
+	@BeforeClass
+	public static void init() throws Exception {
+		samlFile = new File("../src/main/resources/saml.xml");
+		if(!samlFile.exists()) {
+			throw new FileNotFoundException("saml.xml not found");
+		}
+	}
+
+	@Test
+	public void testSaxBuilderWithElementTraversal() throws Exception {
+		try {
+			long start = System.currentTimeMillis();	
+			String saml = jdomParser.getSamlAssertion(samlFile);
+			long end = System.currentTimeMillis();
+			
+			assertNotNull(saml);
+			System.out.println(saml);
+			System.out.println(format("duration in milliseconds: %d", (end - start)));
+		}
+		catch(Exception e) {
+			throw e;
+		}
+		finally {
+			
+		}
+		
+	}
 }
