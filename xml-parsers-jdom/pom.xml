@@ -11,7 +11,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>parsers-jdom</artifactId>
+	<artifactId>xml-parsers-jdom</artifactId>
 
 	<name>parsers-jdom</name>
 	<url>http://maven.apache.org</url>
@@ -28,7 +28,7 @@
 		
 		<dependency>
 			<groupId>com.flores.projects.xml</groupId>
-			<artifactId>xml-parser-impl</artifactId>
+			<artifactId>xml-parsers-impl</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 
