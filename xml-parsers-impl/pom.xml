@@ -11,7 +11,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>xml-parser-impl</artifactId>
+	<artifactId>xml-parsers-impl</artifactId>
 
 	<name>xml-parser-impl</name>
 	<url>http://maven.apache.org</url>
