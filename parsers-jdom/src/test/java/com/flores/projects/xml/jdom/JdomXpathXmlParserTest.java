@@ -61,6 +61,7 @@ public class JdomXpathXmlParserTest  {
 			logger.info("Average execution in milliseconds: {}", (totalTime / numberOfExecutions));
 			logger.info("Max execution in milliseconds: {}", maxTime);
 			logger.info("Min execution in milliseconds: {}", minTime);
+			logger.info("Total executions: {}", numberOfExecutions);
 		}
 	}
 }
