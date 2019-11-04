@@ -22,7 +22,7 @@
 
 	<modules>
 		<module>xml-parsers-jdom</module>
-		<module>xml-parser-impl</module>
+		<module>xml-parsers-impl</module>
 		<module>xml-parsers-w3c</module>
 	</modules>
 
