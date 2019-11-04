@@ -12,12 +12,12 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class JdomXmlParserImplTest  {
+public class JdomXpathXmlParserTest  {
 	
 	private static int numberOfExecutions = 500;
 	private static File samlFile = null;
 	
-	private static final Logger logger = LoggerFactory.getLogger(JdomXmlParserImplTest.class);
+	private static final Logger logger = LoggerFactory.getLogger(JdomXpathXmlParserTest.class);
 	
 	@BeforeClass
 	public static void init() throws Exception {
@@ -30,7 +30,7 @@ public class JdomXmlParserImplTest  {
 	}
 
 	@Test
-	public void testSaxBuilderWithElementTraversal() throws Exception {
+	public void testSaxBuilderWithXPath() throws Exception {
 		long totalTime = 0;
 		long minTime = 100;
 		long maxTime = 0;
@@ -43,7 +43,7 @@ public class JdomXmlParserImplTest  {
 				 * associated with creating the builder and document
 				 */
 				long start = System.currentTimeMillis();	
-				String saml = new JdomXmlParserImpl().getSamlAssertion(samlFile);
+				String saml = new JdomXpathXmlParser().getSamlAssertion(samlFile);
 				long end = System.currentTimeMillis();
 				
 				//ensure the token is actually - not null, not empty
